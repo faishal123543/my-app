@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "backend: run safe",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\run-backend.ps1"
+      ],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: compile",
+      "type": "shell",
+      "command": "mvn",
+      "args": [
+        "compile"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$javac"
+      ]
+    },
+    {
+      "label": "frontend: start",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "start"
+      ],
+      "options": {
+        "cwd": "c:/Users/faishal/loanManagementApp-frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

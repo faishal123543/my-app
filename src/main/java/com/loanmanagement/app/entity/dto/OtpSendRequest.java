@@ -1,0 +1,21 @@
+package com.loanmanagement.app.entity.dto;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import lombok.Data;
+
+@Data
+public class OtpSendRequest {
+
+    @NotNull(message = "Mobile number is required")
+    @Pattern(regexp = "\\+?[0-9]{10,15}", message = "Mobile number must be 10 to 15 digits, optional leading +")
+    private String mobileNumber;
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+}
